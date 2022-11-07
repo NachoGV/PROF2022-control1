@@ -6,12 +6,14 @@ import static org.junit.Assert.fail;
 import org.junit.Test;
 import static org.mockito.Mockito.*;
 
+import java.util.Vector;
+
 public class MatriculaTest {
 
     @Test
     public void testVectorNulo() {
         Matricula mat = new Matricula(null);
-
+        
         boolean thrown = false;
 
         try {
@@ -29,7 +31,7 @@ public class MatriculaTest {
 
     @Test
     public void importeCorrecto() {
-        Matricula mat = mock(Matricula.class);
+        Matricula mat = new Matricula(new Vector<Asignatura>());
 
         Asignatura asig1 = mock(Asignatura.class);
         Asignatura asig2 = mock(Asignatura.class);
@@ -52,7 +54,7 @@ public class MatriculaTest {
 
     @Test
     public void recorreAsignaturas() {
-        Matricula mat = mock(Matricula.class);
+        Matricula mat = new Matricula(new Vector<Asignatura>());
 
         Asignatura asig1 = mock(Asignatura.class);
         Asignatura asig2 = mock(Asignatura.class);
